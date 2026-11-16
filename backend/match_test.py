@@ -57,3 +57,23 @@ result = match_score(sonam, priya)
 print("Student 1:", sonam["name"])
 print("Student 2:", priya["name"])
 print("Match Score:", result, "/ 100")
+
+# Test 1: Current students
+print("Test 1:", match_score(sonam, priya))
+
+# Test 2: Same college
+priya["college"] = "ABC College"
+print("Test 2:", match_score(sonam, priya))
+
+# Test 3: Same free days
+priya["free_days"] = ["Monday", "Wednesday"]
+print("Test 3:", match_score(sonam, priya))
+
+# Test 4: No matching skills
+priya["learn"] = ["Chemistry"]
+priya["teach"] = ["Physics"]
+print("Test 4:", match_score(sonam, priya))
+
+# Test 5: No skills to learn
+sonam["learn"] = []
+print("Test 5:", match_score(sonam, priya))
